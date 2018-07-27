@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Weather Application Developemnt</h1>
+    <div class="weatherHead">
+      <div>
+        <div class="wheatherHeader"></div>
+        <span class="today">Today</span><br>
+          <img src="/assets/images/art_{{weather.list[0].weather[0].main}}.png"/><br><span class="spanW">{{weather.list[0].weather[0].description}}</span><br>
+            <span class="minTemp">{{weather.list[0].dt_txt|date}}</span><br>
+            <span class="spanW">{{weather.list[0].main.temp}}&deg;</span>
+    </div>
+    </div>
+    <div class ="weatherBody">
+      <div  *ngFor="let item of everyDayTemp; let count=index">
+        <div>{{days[count]}}<br><img class="weather_Imgsymbol" src="/assets/images/art_{{item.weather[0].main}}.png"></div> 
+        <span>{{item.main.temp}}&deg;</span>
+        <div class="subHeading">{{item.weather[0].description}}</div>        
+      </div>
+      </div>
+</div>
